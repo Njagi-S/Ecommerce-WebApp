@@ -34,3 +34,25 @@ npm install
 
 # Run the development server
 npm run dev
+
+Then open http://localhost:5173 in your browser.
+✅ To-Do
+
+Add checkout functionality
+
+Connect to a backend or API
+
+    Add product categories or filters
+
+📄 License
+
+feel free to use and modify.
+👨‍💻 Author
+
+Sheldon Njagi
+Project built for learning and exploration.
+
+
+---
+
+Let me know if you'd like me to customize this with your actual project name or include GitHub repo badges!
