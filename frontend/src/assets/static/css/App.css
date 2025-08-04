@@ -1,0 +1,34 @@
+/* src/components/ProductCard.css */
+
+/* Card hover effect */
+.product-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Image styling */
+.product-image {
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Description text */
+.description {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Ensure full height structure */
+.card-body {
+  display: flex;
+  flex-direction: column;
+}

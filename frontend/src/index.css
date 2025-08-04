@@ -1,0 +1,10 @@
+/* src/index.css */
+/* Keep minimal so Bootstrap and styles.css take over */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+}
