@@ -34,7 +34,7 @@ project-root/
 ├── src/
 │   ├── components/
 │   │   ├── ProductCard.jsx
-│   │   ├── Cart.jsx
+│   │   ├── CartPage.jsx
 │   │   └── ...
 │   ├── App.jsx
 │   └── main.jsx
