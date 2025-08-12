@@ -13,7 +13,7 @@ const ForgotPassword = () => {
 
     try {
       // Send request to backend to trigger password reset email
-      const res = await axios.post('https://your-api.com/api/forgot-password', { email });
+      const res = await axios.post('https://your-api.com/api/forgot-password/', { email });
 
       toast.success('Password reset link sent to your email.', { autoClose: 2000 });
     } catch (err) {

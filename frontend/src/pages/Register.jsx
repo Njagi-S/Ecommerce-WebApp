@@ -39,7 +39,7 @@ function Register() {
 
     try {
       // Send registration data
-      const response = await axios.post('https://your-api-url.com/api/register', {
+      const response = await axios.post('http://localhost:8000/api/register/', {
         ...form,
         phone: fullPhone,
       });

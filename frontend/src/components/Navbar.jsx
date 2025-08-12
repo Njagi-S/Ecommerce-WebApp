@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { FaShoppingCart, FaHome, FaBoxOpen, FaUser } from "react-icons/fa"; // Import icons
+import { FaShoppingCart, FaHome, FaBoxOpen, FaUser, FaList, FaSignOutAlt } from "react-icons/fa";
 
-const Navbar = ({ cart }) => {
+// The Navbar component now receives `isLoggedIn` and `handleLogout` as props
+const Navbar = ({ cart, isLoggedIn, handleLogout }) => {
+
   return (
     <nav className='navbar navbar-expand-lg navbar-dark bg-dark px-4'>
       <div className="container-fluid">
@@ -44,30 +46,45 @@ const Navbar = ({ cart }) => {
               <Link className="nav-link d-flex align-items-center" to="/cart">
                 <FaShoppingCart size={18} className="me-1" />
                 Cart
-
-                {/* Total quantity counter */}
                 {cart.length > 0 && (
                   <span className="badge bg-danger ms-2 rounded-pill position-absolute top-0 start-100 translate-middle">
-                    {
-                      cart.reduce((total, item) => total + item.quantity, 0)
-                    }
+                    {cart.reduce((total, item) => total + item.quantity, 0)}
                   </span>
                 )}
               </Link>
             </li>
 
-            {/* Profile */}
-            <li className='nav-item'>
-              <Link className="nav-link d-flex align-items-center" to="#">
-                <FaUser className="me-1" /> Profile
+            {/* Product List - Updated with FaList icon */}
+            <li className="nav-item">
+              <Link className="nav-link d-flex align-items-center" to="/productlist">
+                <FaList className="me-1" /> Product List
               </Link>
             </li>
+
+            {isLoggedIn && (
+              <li className='nav-item'>
+                <Link className="nav-link d-flex align-items-center" to="/dashboard">
+                  <FaUser className="me-1" /> Profile
+                </Link>
+              </li>
+            )}
           </ul>
 
-          {/* Login & Register Buttons */}
+          {/* Conditional Rendering for Login/Register vs. Logout */}
           <div className="d-flex ms-lg-3 mt-3 mt-lg-0">
-            <Link to="/login" className="btn btn-outline-light me-2">Login</Link>
-            <Link to="/register" className="btn btn-light">Register</Link>
+            {isLoggedIn ? (
+              <button 
+                onClick={handleLogout} 
+                className="btn btn-outline-light d-flex align-items-center"
+              >
+                <FaSignOutAlt className="me-2" /> Logout
+              </button>
+            ) : (
+              <>
+                <Link to="/login" className="btn btn-outline-light me-2">Login</Link>
+                <Link to="/register" className="btn btn-light">Register</Link>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -76,4 +93,3 @@ const Navbar = ({ cart }) => {
 };
 
 export default Navbar;
-
